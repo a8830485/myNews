@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyNews</string>
+    <string name="tv_type">频道分类</string>
+    <string name="date">日期:</string>
+    <string name="tv_show">节目列表</string>
+    <string name="tv_channel">频道选择</string>
+    <string name="no_tvshow">没有电视节目信息</string>
+</resources>

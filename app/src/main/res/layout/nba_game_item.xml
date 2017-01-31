@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/nba_matchDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="今日 周五"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:background="@android:color/holo_blue_bright"
+            android:visibility="visible"/>
+
+
+        <TextView
+            android:id="@+id/nba_startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:text="已结束"/>
+
+        <View android:layout_height="1px" android:background="@color/colorPrimaryDark" android:layout_width="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="1">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/nba_leftBadge"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.24"
+                    />
+                <TextView
+                    android:id="@+id/nba_leftName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:text="小牛"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/nba_broadcasters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:text="腾讯/BesTv"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/nba_leftGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="24dp"
+                        android:text="99"/>
+                    <TextView
+                        android:id="@+id/nba_rightGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="24dp"
+                        android:textColor="@android:color/black"
+                        android:text="108"/>
+                    <TextView
+                        android:id="@+id/nba_matchDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@android:color/black"
+                        android:text="NBA常规赛"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/nba_rightBadge"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.24"
+                    />
+                <TextView
+                    android:id="@+id/nba_rightName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:text="小牛"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
