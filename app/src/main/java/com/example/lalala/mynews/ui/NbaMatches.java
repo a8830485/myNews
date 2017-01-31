@@ -26,7 +26,7 @@ import retrofit2.Response;
  * Created by lalala on 2017/1/25.
  */
 
-public class NbaHome extends AppCompatActivity {
+public class NbaMatches extends AppCompatActivity {
 
     @BindView(R.id.nba_gamelist_listview)
     ListView nbaGamelistListview;
@@ -46,7 +46,7 @@ public class NbaHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.nba_game_item);
         Fresco.initialize(this);
-        setContentView(R.layout.nba_home);
+        setContentView(R.layout.nba_matches);
         ButterKnife.bind(this);
         TencentServer.getMatches(callback);
 
@@ -69,7 +69,7 @@ public class NbaHome extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    adapter = new NbaMatchAdapter(NbaHome.this, R.layout.nba_game_item, list);
+                    adapter = new NbaMatchAdapter(NbaMatches.this, R.layout.nba_game_item, list);
                     nbaGamelistListview.setAdapter(adapter);
                 }
             });
