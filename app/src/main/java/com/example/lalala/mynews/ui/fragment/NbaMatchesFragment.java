@@ -1,8 +1,15 @@
-package com.example.lalala.mynews.ui;
+package com.example.lalala.mynews.ui.fragment;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.lalala.mynews.Adapter.NbaMatchAdapter;
@@ -26,7 +33,7 @@ import retrofit2.Response;
  * Created by lalala on 2017/1/25.
  */
 
-public class NbaMatches extends AppCompatActivity {
+public class NbaMatchesFragment extends Fragment {
 
     @BindView(R.id.nba_gamelist_listview)
     ListView nbaGamelistListview;
@@ -41,15 +48,15 @@ public class NbaMatches extends AppCompatActivity {
 
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // setContentView(R.layout.nba_game_item);
-        Fresco.initialize(this);
-        setContentView(R.layout.nba_matches);
-        ButterKnife.bind(this);
-        TencentServer.getMatches(callback);
 
+    @Override
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        View view =inflater.inflate(R.layout.nba_home, container, false);
+        ButterKnife.bind(this, view);
+        TencentServer.getMatches(callback);
+        return view;
     }
 
     private Callback<NbaMatchData> callback = new Callback<NbaMatchData>() {
@@ -66,10 +73,10 @@ public class NbaMatches extends AppCompatActivity {
                 list.addAll(((NbaMatchData.Matches)entry.getValue()).list);
                 list.get(size).date = dates.get(cnt++);
             }
-            runOnUiThread(new Runnable() {
+            (getActivity()).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    adapter = new NbaMatchAdapter(NbaMatches.this, R.layout.nba_game_item, list);
+                    adapter = new NbaMatchAdapter(getActivity(), R.layout.nba_game_item, list);
                     nbaGamelistListview.setAdapter(adapter);
                 }
             });
