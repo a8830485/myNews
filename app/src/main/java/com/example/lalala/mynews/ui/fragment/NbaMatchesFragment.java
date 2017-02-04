@@ -1,10 +1,10 @@
 package com.example.lalala.mynews.ui.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,7 +53,7 @@ public class NbaMatchesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // TODO Auto-generated method stub
-        View view =inflater.inflate(R.layout.nba_home, container, false);
+        View view =inflater.inflate(R.layout.nba_matches, container, false);
         ButterKnife.bind(this, view);
         TencentServer.getMatches(callback);
         return view;

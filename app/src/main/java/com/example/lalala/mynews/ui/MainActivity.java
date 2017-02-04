@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_to_nba)
     public void toNbaHome(View view){
-        Intent intent = new Intent(MainActivity.this, NbaHome.class);
+        Intent intent = new Intent(MainActivity.this, NBAActivity.class);
         startActivity(intent);
     }
 }

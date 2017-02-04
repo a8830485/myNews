@@ -96,7 +96,7 @@ public class BaseUtil {
                 .setImageRequest(request)
                 .setOldController(draweeView.getController())
                 .build();
-        Log.i("dasdasdas", (controller == null) + "");
+
         return controller;
     }
 }

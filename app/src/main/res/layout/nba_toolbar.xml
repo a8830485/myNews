@@ -19,10 +19,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/nba_button_matches"
                     android:layout_width="30dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/match"
-                    android:layout_gravity="center"/>
+                    android:background="@drawable/clicked_match"
+                    android:layout_gravity="center"
+                    android:onClick="onClick"/>
             </FrameLayout>
 
             <FrameLayout
@@ -30,10 +32,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/nba_button_news"
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:background="@drawable/news"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="onClick"/>
             </FrameLayout>
 
             <FrameLayout
@@ -41,30 +45,36 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/nba_button_bbs"
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:background="@drawable/bbs"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="onClick"/>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/nba_button_data"
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:background="@drawable/data"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="onClick"/>
             </FrameLayout>
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
                 <Button
+                    android:id="@+id/nba_button_more"
                     android:layout_width="30dp"
                     android:layout_height="40dp"
                     android:background="@drawable/more"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:onClick="onClick"/>
             </FrameLayout>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
