@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,7 +34,7 @@ import retrofit2.Response;
  * Created by lalala on 2017/1/25.
  */
 
-public class NbaMatchesFragment extends Fragment {
+public class NbaMatchesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
 
     @BindView(R.id.nba_gamelist_listview)
     ListView nbaGamelistListview;
@@ -57,6 +58,10 @@ public class NbaMatchesFragment extends Fragment {
         ButterKnife.bind(this, view);
         TencentServer.getMatches(callback);
         return view;
+    }
+
+    public void onRefresh(){
+
     }
 
     private Callback<NbaMatchData> callback = new Callback<NbaMatchData>() {

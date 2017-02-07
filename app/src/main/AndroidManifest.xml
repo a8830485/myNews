@@ -21,6 +21,7 @@
         <activity android:name=".ui.TvShowActivity"/>
         <activity android:name=".ui.TvHome"/>
         <activity android:name=".ui.NBAActivity"/>
+        <activity android:name=".ui.NbaNewsDetailActivity"/>
     </application>
 
 </manifest>

@@ -1,16 +1,16 @@
 package com.example.lalala.mynews.http;
 
-import android.util.Log;
-
 import com.example.lalala.mynews.Util.HttpUtil;
 import com.example.lalala.mynews.data.NbaMatchData;
+import com.example.lalala.mynews.data.NbaNewItemsData;
+import com.example.lalala.mynews.data.NbaNewsDetailData;
+import com.example.lalala.mynews.data.NbaNewsIndexesData;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -36,4 +36,15 @@ public class TencentServer {
         call.enqueue(callback);
     }
 
+    public static void getIndexes(Callback<NbaNewsIndexesData> callback, String column){
+        tencentApi.getNewIndexes(column).enqueue(callback);
+    }
+
+    public static void getItems(Callback<NbaNewItemsData> callback, String column, String articleIds){
+        tencentApi.getNewItems(column, articleIds).enqueue(callback);
+    }
+
+    public static void getDetail(Callback<NbaNewsDetailData> callback, String column, String articleId){
+        tencentApi.getNewsDetail(column, articleId).enqueue(callback);
+    }
 }

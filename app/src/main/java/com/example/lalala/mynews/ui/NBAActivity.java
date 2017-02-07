@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import com.example.lalala.mynews.R;
 import com.example.lalala.mynews.ui.fragment.NbaBbsFragment;
 import com.example.lalala.mynews.ui.fragment.NbaDataFragment;
+import com.example.lalala.mynews.ui.fragment.NbaFragmentInterface;
 import com.example.lalala.mynews.ui.fragment.NbaMatchesFragment;
 import com.example.lalala.mynews.ui.fragment.NbaMoreFragment;
 import com.example.lalala.mynews.ui.fragment.NbaNewsFragment;
@@ -137,6 +139,10 @@ public class NBAActivity extends FragmentActivity implements View.OnClickListene
 
     // 手动设置ViewPager要显示的视图
     private void changeView(int desTab) {
+        if(currentView == desTab) {
+            Log.i("finishUpdate", "finishUpdate");
+            ((SwipeRefreshLayout.OnRefreshListener) fragmentList.get(currentView)).onRefresh();
+        }
         viewpager.setCurrentItem(desTab, true);
     }
 }

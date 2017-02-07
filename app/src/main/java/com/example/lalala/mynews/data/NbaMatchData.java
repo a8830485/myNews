@@ -8,13 +8,10 @@ import java.util.Map;
  * Created by lalala on 2017/1/25.
  */
 
-public class NbaMatchData implements Serializable {
-
-    public String code;
+public class NbaMatchData extends NbaBaseData {
 
     public NbaMatchesData data;
 
-    public String version;
 
     public static class NbaMatchesData implements Serializable{
         public List<String> dates;
