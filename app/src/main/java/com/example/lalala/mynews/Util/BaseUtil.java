@@ -29,6 +29,7 @@ public class BaseUtil {
      */
     public final static String key = "6499d5b8c07811c32f160fd70a004868";
 
+    public static boolean noPic;
 
     private static String date = "";
     /*
@@ -40,7 +41,7 @@ public class BaseUtil {
             int mYear = calendar.get(Calendar.YEAR);
             int mMonth = calendar.get(Calendar.MONTH) + 1;
             int mDay = calendar.get(calendar.DAY_OF_MONTH);
-            date = String.format("%4d-%02d-%2d", mYear, mMonth, mDay);
+            date = String.format("%4d-%02d-%02d", mYear, mMonth, mDay);
         }
         return date;
     }

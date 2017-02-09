@@ -70,7 +70,7 @@ public class NbaNewsFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
     public void onRefresh() {
         nbaNewsRefreshlayout.setRefreshing(true);
-        TencentServer.getIndexes(indexesCallback, "banner");
+        TencentServer.getIndexes(indexesCallback, "news");
     }
 
     private Callback<NbaNewsIndexesData> indexesCallback = new Callback<NbaNewsIndexesData>() {
@@ -109,7 +109,7 @@ public class NbaNewsFragment extends Fragment implements SwipeRefreshLayout.OnRe
             (getActivity()).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    adapter = new NbaNewsAdapter(getActivity(), R.layout.nba_news_item, list);
+                    adapter = new NbaNewsAdapter(getActivity(), R.layout.nba_news_item, list.subList(0, 30));
                     nbaNewsListview.setAdapter(adapter);
                     nbaNewsRefreshlayout.setRefreshing(false);
                 }

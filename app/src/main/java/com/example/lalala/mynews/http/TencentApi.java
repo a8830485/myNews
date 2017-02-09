@@ -6,6 +6,7 @@ import com.example.lalala.mynews.data.NbaNewsDetailData;
 import com.example.lalala.mynews.data.NbaNewsIndexesData;
 
 
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -27,4 +28,7 @@ public interface TencentApi {
 
     @GET("news/detail")
     Call<NbaNewsDetailData> getNewsDetail(@Query("column") String column, @Query("articleId") String articleId);
+
+    @GET("team/rank")
+    Call<String> getTeamRank();
 }

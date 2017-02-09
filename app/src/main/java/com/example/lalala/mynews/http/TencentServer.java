@@ -6,6 +6,7 @@ import com.example.lalala.mynews.data.NbaNewItemsData;
 import com.example.lalala.mynews.data.NbaNewsDetailData;
 import com.example.lalala.mynews.data.NbaNewsIndexesData;
 
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -13,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * Created by lalala on 2017/1/25.
@@ -29,7 +31,19 @@ public class TencentServer {
                      .build())
             .build();
 
+    static Retrofit str_retrofit = new Retrofit.Builder()
+            .baseUrl(HttpUtil.TENCENT_BASE_URL)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .client(new OkHttpClient.Builder()
+                    .connectTimeout(20 * 1000, TimeUnit.MILLISECONDS)
+                    .readTimeout(20 * 1000, TimeUnit.MILLISECONDS)
+                    .retryOnConnectionFailure(true) // 失败重发
+                    .build())
+            .build();
+
     public static TencentApi tencentApi = retrofit.create(TencentApi.class);
+
+    static TencentApi str_tencentApi = str_retrofit.create(TencentApi.class);
 
     public static void getMatches(Callback<NbaMatchData> callback){
         Call<NbaMatchData> call = tencentApi.getMatches();
@@ -46,5 +60,9 @@ public class TencentServer {
 
     public static void getDetail(Callback<NbaNewsDetailData> callback, String column, String articleId){
         tencentApi.getNewsDetail(column, articleId).enqueue(callback);
+    }
+
+    public static void getTeamRank(Callback<String> callback){
+        str_tencentApi.getTeamRank().enqueue(callback);
     }
 }

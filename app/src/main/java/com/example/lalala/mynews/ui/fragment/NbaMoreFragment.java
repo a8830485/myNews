@@ -7,16 +7,21 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import com.example.lalala.mynews.R;
+import com.example.lalala.mynews.Util.BaseUtil;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by lalala on 2017/2/3.
  */
 
-public class NbaMoreFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+public class NbaMoreFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -27,7 +32,8 @@ public class NbaMoreFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
         return view;
     }
-    public void onRefresh(){
+
+    public void onRefresh() {
 
     }
 }

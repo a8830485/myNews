@@ -39,8 +39,6 @@ public class NBAActivity extends FragmentActivity implements View.OnClickListene
     Button nbaButtonMatches;
     @BindView(R.id.nba_button_news)
     Button nbaButtonNews;
-    @BindView(R.id.nba_button_bbs)
-    Button nbaButtonBbs;
     @BindView(R.id.nba_button_data)
     Button nbaButtonData;
     @BindView(R.id.nba_button_more)
@@ -59,37 +57,32 @@ public class NBAActivity extends FragmentActivity implements View.OnClickListene
         super.onCreate(saveInstaceState);
         setContentView(R.layout.nba_home);
         ButterKnife.bind(this);
-        nbaButtonBbs.getId();
 
         fragmentList.add(new NbaMatchesFragment());
         fragmentList.add(new NbaNewsFragment());
-        fragmentList.add(new NbaBbsFragment());
+        //fragmentList.add(new NbaBbsFragment());
         fragmentList.add(new NbaDataFragment());
         fragmentList.add(new NbaMoreFragment());
         viewpager.setAdapter(new MyFragmentAdapter(getSupportFragmentManager()));
 
-        buttons = new Button[]{nbaButtonMatches, nbaButtonNews, nbaButtonBbs, nbaButtonData, nbaButtonMore};
-        buttonImg = new int[]{R.drawable.match, R.drawable.news, R.drawable.bbs,
+        buttons = new Button[]{nbaButtonMatches, nbaButtonNews, nbaButtonData, nbaButtonMore};
+        buttonImg = new int[]{R.drawable.match, R.drawable.news,
                 R.drawable.data, R.drawable.more};
         clickedImg = new int[]{R.drawable.clicked_match, R.drawable.clicked_news,
-                R.drawable.clicked_bbs, R.drawable.clicked_data, R.drawable.clicked_more};
+                 R.drawable.clicked_data, R.drawable.clicked_more};
     }
 
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.nba_button_bbs:
-                Log.i("dsadsd", "bbs");
-                changeView(2);
-                break;
             case R.id.nba_button_matches:
                 Log.i("dsadsd", "matches");
                 changeView(0);
                 break;
             case R.id.nba_button_data:
                 Log.i("dsadsd", "data");
-                changeView(3);
+                changeView(2);
                 break;
             case R.id.nba_button_news:
                 Log.i("dsadsd", "news");
@@ -97,7 +90,7 @@ public class NBAActivity extends FragmentActivity implements View.OnClickListene
                 break;
             case R.id.nba_button_more:
                 Log.i("dsadsd", "more");
-                changeView(4);
+                changeView(3);
                 break;
             default:
                 break;
@@ -145,4 +138,5 @@ public class NBAActivity extends FragmentActivity implements View.OnClickListene
         }
         viewpager.setCurrentItem(desTab, true);
     }
+
 }
